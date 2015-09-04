@@ -2,7 +2,7 @@
 This document describes two approaches of project build versioning, which will help developers keep track of their work and act as a point of reference in communications of features, bugs, tasks and etc.
 
 ## Server
-Server projects versioning conforms to the [semantic versioning](http://semver.org). The gist of is that each version is broken down to three components: `MAJOR`, `MINOR` and `PATCH`. For server projects, this notation applies not only to public builds, but also in-house testing builds.
+Server projects versioning conforms to the [semantic versioning](http://semver.org). The gist of it is that each version is broken down to three components: `MAJOR`, `MINOR` and `PATCH`. For server projects, this notation applies not only to public builds, but also in-house testing builds.
 
 1. `MAJOR` version represents incomptible API changes (i.e. deprecate API support, complete API behavior change, behavior breaking bug fixes)
 2. `MINOR` version represents backward compatible changes (i.e. new features)
@@ -11,7 +11,7 @@ Server projects versioning conforms to the [semantic versioning](http://semver.o
 For instance:
 - If we found a critical bug after release `2.3.0`, we fix it by releasing `2.3.1`.
 - We then added several new feature, it will be released as `2.4.0`.
-- After several years of support, we decided to drop some API which only servers old devices, it will be released as `3.0.0`.
+- After several years of support, we decided to drop some API which only serves old devices, it will be released as `3.0.0`.
 
 ## iOS
 iOS project releases subject to AppStore approval and it does not share a free lifecycle as the server projects. Hence, we make some modifications on top of [semantic versioning](http://semver.org).

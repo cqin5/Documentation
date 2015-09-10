@@ -1,0 +1,20 @@
+Tipsy ~ Nov 9
+- product catelog (fetch or cache? how to update? database locking? HA?)
+- order (cart, photoID, signiture)
+	- history
+- real time driver availability (session)
+- pricing system (quote for users, expire)
+- marketing
+- promo codes
+- user mgmt + security
+- driver / user communication
+- price modification request
+	- expiry
+	- default action
+- order session (client) start:
+	- current location or delivery address
+	- search LCBO within 3k
+	- when order: search driver within 5k -> require quote -> book driver
+- adding orders to driver when enroute to LCBO (feature)
+- current order vs future order (future order requires confirmation before dispatch + quartz scheduling)
+- push notification to driver

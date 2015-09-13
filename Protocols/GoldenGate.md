@@ -1,10 +1,11 @@
 # GoldenGate Protocol
-Protocal for onboarding a new employee
+Protocol for onboarding a new employee
 
 ## Checklist for everyone
 - [ ] Create email account
 - [ ] Invite to liakada.slack.com
 - [ ] Invite to WeChat
+- [ ] Invite to Trello
 - [ ] Enable access to Dropbox
 - [ ] Ask for bio for website
 - [ ] Ask for phone number for business card
@@ -23,3 +24,4 @@ Protocal for onboarding a new employee
 
 ## Checklist for new analysts
 - [ ] Go through research projects
+- [ ] Add to "Projects" on Trello

@@ -183,7 +183,19 @@ This is not a API endpoint, but still included here as it's an integral part of 
       "name": {
         "first": "Foo",
         "last": "Bar"
-      }
+      },
+      "following": [
+        {
+          "id": "someExternalId",
+          "name": {"first": "Foo", "last": "Bar"}
+        }
+      ],
+      "followers": [
+        {
+          "id": "someExternalId",
+          "name": {"first": "Foo", "last": "Bar"}
+        }
+      ]
     }
 
 **Response Codes**
@@ -212,3 +224,38 @@ a link to reset his password.
 **Response Code**
 
 - `202`: Request accepted
+
+### 1.9 Follow User
+
+**Resource URL**: `POST /api/user/$userExternalId/follow`
+
+**Authority**: authenticated
+
+**Description**
+
+Following the user represented by the `userExternalId` will add that user's information to the following list of
+the current authenticated user. And current user information to that user's followers information. It will also
+emit a notification which could be used to send push notification.
+
+**Response Body**
+
+- `204`: successfully followed or already followed
+- `401`: not authenticated
+- `500`: server error
+
+### 1.10 Unfollow user
+
+**Resource URL**: `DELETE /api/user/$userExternalId/follow`
+
+**Authority**: authenticated
+
+**Description**
+
+Unfollowing the user represented by the `userExternalId` will remove that user's information from the following list of
+the current authenticated user and current user information from that user's followers information.
+
+**Response Body**
+
+- `204`: successfully unfollowed or not followed in the first place
+- `401`: not authenticated
+- `500`: server error

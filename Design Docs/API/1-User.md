@@ -16,6 +16,7 @@ Anyone with a valid referral code can create a customer account representing him
     {
       "email": "foo@bar.com",
       "password": "someSecret",
+      "username": "foobar",
       "referral_code": "foo",
       "source": "IT",
       "name": {
@@ -54,6 +55,7 @@ Verified salesperson can register using a referral code issued by another salesp
     {
       "email": "foo@bar.com",
       "password": "someSecret",
+      "username": "foobar",
       "referral_code": "foo",
       "name": {
         "first": "Foo",
@@ -91,6 +93,7 @@ Verified salesperson can register using a referral code issued by another salesp
     {
       "email": "foo@bar.com",
       "password": "someSecret",
+      "username": "foobar",
       "referral_code": "foo",
       "name": {
         "first": "Foo",
@@ -159,11 +162,21 @@ This is not a API endpoint, but still included here as it's an integral part of 
 
     {
       "email": "foo@bar.com",
+      "username": "foobar",
       "name": {
         "first": "Foo",
         "last": "Bar"
       },
-      "referral_code": "myReferralCode"
+      "referral_code": "myReferralCode",
+      "type": "salesperson|customer|internal",
+      "followers": [{
+          "username": "foo",
+          "external_id": "someExternalId"
+        }],
+      "following": [{
+          "username": "bar",
+          "external_id": "someExternalId"
+        }]
     }
 
 **Error Response**
@@ -173,7 +186,7 @@ This is not a API endpoint, but still included here as it's an integral part of 
 
 ### 1.7 Update account information
 
-**Resource URL**: `PUT /api/user/me`
+**Resource URL**: `PATCH /api/user/me`
 
 **Authority**: authenticated
 
@@ -183,19 +196,7 @@ This is not a API endpoint, but still included here as it's an integral part of 
       "name": {
         "first": "Foo",
         "last": "Bar"
-      },
-      "following": [
-        {
-          "id": "someExternalId",
-          "name": {"first": "Foo", "last": "Bar"}
-        }
-      ],
-      "followers": [
-        {
-          "id": "someExternalId",
-          "name": {"first": "Foo", "last": "Bar"}
-        }
-      ]
+      }
     }
 
 **Response Codes**
@@ -259,3 +260,14 @@ the current authenticated user and current user information from that user's fol
 - `204`: successfully unfollowed or not followed in the first place
 - `401`: not authenticated
 - `500`: server error
+
+### 1.11 Check username availability
+
+**Resource URL**: `GET /api/username/$username/availability`
+
+**Authority**: unauthenticated
+
+**Response**
+
+- `204`: available
+- `409`: taken

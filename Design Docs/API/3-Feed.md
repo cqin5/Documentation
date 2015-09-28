@@ -52,6 +52,7 @@ Posting a feed will also creating feed links in the user's account who is curren
 
     {
       "caption": "something",
+      "create_time": aUnixTimestamp,
       "media": {
         "type": "Image",
         "url": "https://s3.com/sample.jpeg",
@@ -171,9 +172,12 @@ Posting a feed will also creating feed links in the user's account who is curren
 
 ### 3.7 My Feed
 
-**Resource URL**: `GET /api/feed?ref=referenceTimestamp&count=10`
+**Resource URL**: `GET /api/feed?ref=referenceTimestamp&ref_op=gt&count=10`
 
 **Authority**: authenticated
+
+**Description**
+`ref_op`: gt | lt
 
 **Response**
 

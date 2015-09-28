@@ -16,8 +16,8 @@ An activity can be either an appointment or an event.
         "someKey": "someValue"
       },
       "time": {
-        "start": "2007-03-01T13:00:00Z",
-        "end": "2008-05-11T15:30:00Z",
+        "start": aUnixTimestamp,
+        "end": aUnixTimestamp,
         "duration": "P1Y2M10DT2H30M",
         "repeat": {
           "count": 10,
@@ -47,8 +47,8 @@ An activity can be either an appointment or an event.
         "someKey": "someValue"
       },
       "time": {
-        "start": "2007-03-01T13:00:00Z",
-        "end": "2008-05-11T15:30:00Z",
+        "start": aUnixTimestamp,
+        "end": aUnixTimestamp,
         "duration": "P1Y2M10DT2H30M"
       }
     }
@@ -106,8 +106,8 @@ An activity can be either an appointment or an event.
         "someKey": "someValue"
       },
       "time": {
-        "start": "2007-03-01T13:00:00Z",
-        "end": "2008-05-11T15:30:00Z",
+        "start": aUnixTimestamp,
+        "end": aUnixTimestamp,
         "duration": "P1Y2M10DT2H30M",
         "repeat": {
           "count": 10,

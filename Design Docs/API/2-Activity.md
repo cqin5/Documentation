@@ -101,7 +101,15 @@ An activity can be either an appointment or an event.
 **Response Body(200)**
 
     {
-      "participants":["participantId"],
+      "initiator": {
+      	"username": "foobar",
+      	"externalId": "someExternalId"
+      },
+      "participants":[{
+      	"username": "foobar",
+      	"externalId": "someExternalId",
+      	"decision": "GOING"
+      }],
       "location": {
         "someKey": "someValue"
       },

@@ -271,3 +271,20 @@ the current authenticated user and current user information from that user's fol
 
 - `204`: available
 - `409`: taken
+
+### 1.12 Check password strengh
+
+**Resource URL**: `POST /api/password/validity`
+
+**Authority**: unauthenticated
+
+**Parameters**: form encoded `password=$passwordToCheck`
+
+**Response**
+
+    {
+      "valid": false,
+      "violation": ['violation message1', 'violation message2']
+    }
+
+- `200`: default response
